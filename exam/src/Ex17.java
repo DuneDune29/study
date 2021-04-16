@@ -1,19 +1,33 @@
+interface A2 {
+	void ameth1 ();
+	void ameth2 ();
+}
+interface B {
+	void bmeth1 ();
+}
+interface C extends A2, B {
+	void cmeth1 ();
+}
+class InterfaceClass implements C {
+	public void ameth1() {
+		System.out.println("ameth1() 메소드의 구현");
+	}
+	public void ameth2() {
+		System.out.println("ameth2() 메소드의 구현");
+	}
+	public void bmeth1() {
+		System.out.println("bmeth1() 메소드의 구현");
+	}
+	public void cmeth1() {
+		System.out.println("cmeth1() 메소드의 구현");
+	}
+}
 public class Ex17 {
 	public static void main(String[] args) {
-		char a[] = { 'b', ' ', 'A', '5', '한' };
-		
-		for (int i = 0; i < a.length; i++) {
-			System.out.println("a[" + i + "] 요소 = " + a[i]);
-			if (Character.isDigit(a[i]))
-				System.out.println(" : 숫자");
-			if (Character.isLetter(a[i]))
-				System.out.println(" : 문자");
-			if (Character.isWhitespace(a[i]))
-				System.out.println(" : 공백문자");
-			if (Character.isUpperCase(a[i]))
-				System.out.println(" : 대문자");
-			if (Character.isLowerCase(a[i]))
-				System.out.println(" : 소문자");
-		}
+		InterfaceClass ic = new InterfaceClass();
+		ic.ameth1();
+		ic.ameth2();
+		ic.bmeth1();
+		ic.cmeth1();
 	}
 }

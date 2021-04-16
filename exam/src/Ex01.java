@@ -1,18 +1,18 @@
+class B1 {
+	int x;
+}
+class B2 extends B1 {
+	String x;
+}
 class Ex01 {
 	public static void main(String[] args) {
-		Ex01 r = new Ex01();
-		
-		int result = r.add(3, 5);
-		System.out.println(result);
-	
-		int[] result2 = { 0 };
-		r.add(3, 5, result2);
-		System.out.println(result2[0]);
-	}
-	int add(int a, int b) {
-		return a + b;
-	}
-	void add(int a, int b, int[] result) {
-		result[0] = a + b;
+		B2 b2 = new B2();
+		b2.x = "자바 상속 extends";
+		// B1 클래스에서 선언된 int x는 가려짐(오버라이딩)
+		// 만일 b2.x = 50을 실행한다면 에러 발생
+		System.out.println("b2.x : " + b2.x);
+		B1 b1 = new B1();
+		b1.x = 5000;
+		System.out.println("b1.x : " + b1.x);
 	}
 }

@@ -1,19 +1,29 @@
+interface A4 {
+	void display(String s);
+}
+class C3 implements A4 {
+	public void display(String s) {
+		System.out.println("클래스 C1 객체 이용 : " + s);
+	}
+}
+class C4 implements A4 {
+	public void display(String s) {
+		System.out.println("클래스 C2 객체 이용 : " + s);
+	}
+}
+class C5 implements A4 {
+	public void display(String s) {
+		System.out.println("클래스 C3 객체 이용 : " + s);
+	}
+}
 public class Ex18 {
 	public static void main(String[] args) {
-		Integer num1 = new Integer(13);
-		Integer num2 = new Integer(13);
-		Integer num3 = new Integer("13");
-		System.out.println("num1이 포장하고 있는 정수는 : " + num1.intValue());
-		System.out.println("num2이 포장하고 있는 정수는 : " + num2.intValue());
-		System.out.println("num3이 포장하고 있는 정수는 : " + num3.intValue());
-		
-		int hap = num1.intValue() + num2.intValue();
-		System.out.println("합 = " + hap);
-		System.out.println("합의 2진 표현 : " + Integer.toBinaryString(hap));
-		System.out.println("합의 8진 표현 : " + Integer.toOctalString(hap));
-		System.out.println(num1.equals(num2));
-		System.out.println(num1.equals(num3));
-		System.out.println(num1 == num2);
-		System.out.println(num2 == num3);
+		A4 memo;
+		memo = new C3();
+		memo.display("안녕하세요? ");
+		memo = new C4();
+		memo.display("알기쉽게 해설한 자바.");
+		memo = new C5();
+		memo.display("자바를 자바봅시다. ");
 	}
 }

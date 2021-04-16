@@ -1,17 +1,32 @@
-class One {
-	int value;
-	
-	public One() {
-		this(100); // 자신 클래스의 다른 생성자를 호출
+abstract class Shape2 {
+	public double res = 0;
+	public abstract double area();
+	public void printArea() {
+		System.out.println( "면적은 " + res);
 	}
-	
-	public One(int value) {
-		this.value = value;
+}
+class Circle extends Shape2 {
+	public int r = 5;
+	@Override
+	public double area() {
+		res = r * r * Math.PI;	return res;
+	}
+}
+class Rectangle1 extends Shape2 {
+	public int w = 10, h =  10;
+	@Override
+	public double area() {
+		res = w * h;		return res;
 	}
 }
 public class Ex12 {
 	public static void main(String[] args) {
-		One t1 = new One();
-		System.out.println(t1.value);
+		Shape2 ref = null;
+		ref = new Circle();
+		ref.area();
+		ref.printArea();
+		ref = new Rectangle1();
+		ref.area();
+		ref.printArea();
 	}
 }

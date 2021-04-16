@@ -1,21 +1,19 @@
-class Account {
-	int count;
-	static int total;
-	Account(int amount){
-		count += amount;		total += amount;
+class AA {
+	int i, j;
+	public void setij(int x, int y) {
+		i = x;		j = y;
 	}
+}
+
+class BB extends AA {
+	int total;
+	public void sum() { total = i + j; }
 }
 public class Ex03 {
 	public static void main(String[] args) {
-		System.out.println("Account.total : " + Account.total);
-		Account acc01 = new Account(10);
-		System.out.println("acc01.total : " + acc01.total);
-		System.out.println("acc01.count : " + acc01.count);
-		Account acc02 = new Account(10);
-		System.out.println("acc02.total : " + acc02.total);
-		System.out.println("acc02.count : " + acc02.count);
-		Account acc03 = new Account(10);
-		System.out.println("acc03.total : " + acc03.total);
-		System.out.println("acc03.count : " + acc03.count);
+		BB subOb = new BB();
+		subOb.setij(10, 12);
+		subOb.sum();
+		System.out.println("гу╟Х : " + subOb.total);
 	}
 }
